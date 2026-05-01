@@ -1,3 +1,7 @@
+## Setup Guide
+
+For the best setup instructions, see: [Fun with Ghostty Shaders](https://catskull.net/fun-with-ghostty-shaders.html)
+
 ## Installation
 
 Clone the repository:
