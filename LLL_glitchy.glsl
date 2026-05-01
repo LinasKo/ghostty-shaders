@@ -119,8 +119,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     // col.r += textureLod(iChannel0, st + eps + distortion, 0.).r;
     // col.b += textureLod(iChannel0, st - eps - distortion, 0.).b;
     
-    // white noise + scanlines
-    displayNoise = 0.2 * clamp(displayNoise, 0., 1.);
+    // white noise + scanlines (only during glitch)
+    displayNoise = 0.2 * clamp(displayNoise, 0., 1.) * glitchAmount;
     col += (.15 + .65 * glitchAmount) * (hash33(vec3(fragCoord, mod(float(iFrame),
 					1000.))).r) * displayNoise;
     col -= (.25 + .75 * glitchAmount) * (sin(4. * t + uv.y * iResolution.y * 1.75))

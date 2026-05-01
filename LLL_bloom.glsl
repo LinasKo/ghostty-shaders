@@ -84,8 +84,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
             vec3 s = samples[i];
             vec4 c = toOklab(texture(iChannel0, uv + s.xy * step));
             if (c.x > DIM_CUTOFF) {
-                glow.yz += c.yz * s.z * 0.34;
-                glow.x  += c.x  * s.z * (c.x <= BRIGHT_CUTOFF ? 0.060 : 0.113);
+                glow.yz += c.yz * s.z * 0.255;
+                glow.x  += c.x  * s.z * (c.x <= BRIGHT_CUTOFF ? 0.045 : 0.085);
             }
         }
         dest.xyz += glow;
